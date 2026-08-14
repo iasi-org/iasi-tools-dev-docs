@@ -1,44 +1,32 @@
 # Introducción
 
-Bienvenido a la guía de usuario de **iasi.quarto**.
+`iasi-dev` es una herramienta que se utiliza escribiendo instrucciones en una terminal. Esas instrucciones permiten realizar las tareas habituales de desarrollo y operación del ecosistema IASI.
 
-Este libro está dirigido a quienes desean utilizar `iasi.quarto` para construir proyectos documentales basados en Quarto.
+Permite preparar un workspace, actualizar repositorios, construir y publicar documentación, desplegar cambios y gestionar los servicios locales con una interfaz común.
 
-No es necesario conocer la arquitectura interna del framework ni los detalles de su implementación.
+Esta guía está dirigida a las personas que trabajan con la documentación y los proyectos IASI. Explica el vocabulario utilizado, qué instrucción elegir, qué resultado esperar y qué precauciones tomar.
 
-El objetivo de esta guía es ayudarte a comprender la filosofía de `iasi.quarto`, instalarlo, crear tu primer proyecto y aprovechar sus capacidades en situaciones reales.
+## Cómo se escribe una instrucción
 
-## iasi.quarto y Quarto
+```bash
+iasi-dev <comando> [opciones]
+```
 
-`iasi.quarto` vive sobre Quarto.
+Para consultar la ayuda disponible:
 
-No pretende sustituirlo, modificar su modelo documental ni crear un sistema de publicación alternativo.
+```bash
+iasi-dev help
+iasi-dev help <comando>
+```
 
-Quarto continúa siendo el motor responsable de procesar los documentos y generar los formatos finales. `iasi.quarto` proporciona una capa de organización, automatización y convenciones que facilita el desarrollo y mantenimiento de proyectos documentales de cualquier tamaño.
+En esta guía, llamamos **comando** a la palabra que indica la operación principal, como `build` o `deploy`. Llamamos **opción** a un modificador precedido por `-` o `--`, como `--full`. Los valores entre corchetes son opcionales; los corchetes no se escriben.
 
-## ¿Qué encontrarás en este libro?
+## Recorrido recomendado
 
-A lo largo de esta guía aprenderás a:
+- empiece por **Conceptos y nomenclatura**;
+- prepare su entorno con **Primeros pasos**;
+- consulte **Comandos** cuando necesite conocer una operación concreta;
+- utilice **Workflows recomendados** para realizar tareas completas;
+- acuda a **Seguridad y diagnóstico** ante una duda o un fallo.
 
-- comprender el propósito de `iasi.quarto`;
-- instalar el framework;
-- crear un nuevo proyecto;
-- organizar la documentación;
-- generar libros en distintos formatos;
-- configurar el comportamiento del framework;
-- utilizar la API pública;
-- resolver los problemas más habituales.
-
-Cada capítulo desarrolla un aspecto concreto y puede consultarse de forma independiente cuando ya se conoce el funcionamiento básico del framework.
-
-## Requisitos
-
-Se recomienda tener conocimientos básicos de:
-
-- Quarto;
-- Git;
-- R (para utilizar el paquete `iasi.quarto`).
-
-No obstante, los conceptos específicos del framework se explican desde el principio.
-
-Comencemos entendiendo por qué nació el framework y qué problemas pretende resolver.
+El siguiente capítulo define las palabras utilizadas en el resto del manual. Ningún nombre de operación implica por sí solo las demás: construir, publicar, confirmar y desplegar son acciones diferentes.

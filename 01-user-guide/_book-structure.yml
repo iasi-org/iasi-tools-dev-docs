@@ -1,7 +1,8 @@
 book:
   chapters:
     - "index.qmd"
-    - "chapters/01-intro/index.qmd"
-    - "chapters/02-fundamentals/index.qmd"
-    - "chapters/03-installation/index.qmd"
-    - "chapters/04-plantuml/index.qmd"
+    - "chapters/01-concepts/index.qmd"
+    - "chapters/02-getting-started/index.qmd"
+    - "chapters/03-commands/index.qmd"
+    - "chapters/04-workflows/index.qmd"
+    - "chapters/05-troubleshooting/index.qmd"
