@@ -1,5 +1,9 @@
-# Load iasi.quarto
+# Load iasi.quarto in interactive sessions.
 
-if (requireNamespace("iasi.quarto", quietly = TRUE)) {
-  library(iasi.quarto)
+if (interactive()) {
+  if (requireNamespace("iasi.quarto", quietly = TRUE)) {
+    suppressPackageStartupMessages(library(iasi.quarto))
+  } else {
+    warning("El paquete iasi.quarto no está instalado.")
+  }
 }
