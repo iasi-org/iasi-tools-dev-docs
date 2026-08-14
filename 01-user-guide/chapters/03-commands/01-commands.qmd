@@ -103,7 +103,7 @@ Añade todos los cambios, crea un commit y lo envía al remoto. Sin repositorio 
 
 El mensaje es obligatorio. Revise siempre `git status` y el diff antes de ejecutar el comando, porque incluye todos los cambios del repositorio seleccionado.
 
-`commit` no construye ni prepara publicaciones y no da un tratamiento separado a `publish/`. Para desplegar documentación resulta más adecuado `deploy`.
+`commit` no construye ni prepara publicaciones. Para desplegar documentación resulta más adecuado `deploy`, que puede ejecutar el ciclo completo mediante `--full`.
 
 ## `deploy`
 
@@ -111,12 +111,12 @@ El mensaje es obligatorio. Revise siempre `git status` y el diff antes de ejecut
 iasi-dev deploy [-f|--full] [-m "mensaje"] [repositorio...]
 ```
 
-Despliega los cambios mediante commits y `push`. Cuando existe `publish/`, separa los cambios ordinarios y los artefactos publicados en commits distintos.
+Despliega el estado local mediante un único commit por repositorio y `push`. El commit incluye conjuntamente las fuentes, los archivos derivados y, cuando existe, el contenido de `publish/`.
 
 Sin `--full` no construye ni publica: despliega el estado que ya exista. Con `--full`, exige primero que `build` y `publish` terminen correctamente.
 
 ```bash
-iasi-dev deploy --full -m "actualiza manual" ./iasi-quarto-docs
+iasi-dev deploy --full -m "actualiza manual" iasi-quarto-docs
 ```
 
 El mensaje predeterminado es `deploy`.

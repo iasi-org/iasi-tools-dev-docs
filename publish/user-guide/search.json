@@ -184,7 +184,7 @@
     "href": "chapters/01-concepts/index.html#desplegar-y-deploy",
     "title": "2  Propósito del documento",
     "section": "2.15 Desplegar y deploy",
-    "text": "2.15 Desplegar y deploy\nEn este documento, cuando decimos desplegar, nos referimos a confirmar los cambios de uno o varios repositorios y enviarlos al remoto.\nEl comando correspondiente es:\niasi-dev deploy [destino]\nCuando existe publish/, deploy separa los cambios ordinarios y los artefactos publicables en commits distintos antes de realizar push.\ndeploy sin opciones no construye ni publica. Utiliza el estado que ya existe.",
+    "text": "2.15 Desplegar y deploy\nEn este documento, cuando decimos desplegar, nos referimos a confirmar los cambios de uno o varios repositorios y enviarlos al remoto.\nEl comando correspondiente es:\niasi-dev deploy [destino]\ndeploy crea un único commit por repositorio con el estado local completo, incluido publish/ cuando existe, y después realiza push.\ndeploy sin opciones no construye ni publica. Utiliza el estado que ya existe.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
@@ -374,7 +374,7 @@
     "href": "chapters/03-commands/index.html#commit",
     "title": "4  Ayuda",
     "section": "4.6 commit",
-    "text": "4.6 commit\niasi-dev commit -m \"mensaje\" [repositorio...]\nAñade todos los cambios, crea un commit y lo envía al remoto. Sin repositorio procesa los repositorios Git situados directamente bajo el directorio actual.\nEl mensaje es obligatorio. Revise siempre git status y el diff antes de ejecutar el comando, porque incluye todos los cambios del repositorio seleccionado.\ncommit no construye ni prepara publicaciones y no da un tratamiento separado a publish/. Para desplegar documentación resulta más adecuado deploy.",
+    "text": "4.6 commit\niasi-dev commit -m \"mensaje\" [repositorio...]\nAñade todos los cambios, crea un commit y lo envía al remoto. Sin repositorio procesa los repositorios Git situados directamente bajo el directorio actual.\nEl mensaje es obligatorio. Revise siempre git status y el diff antes de ejecutar el comando, porque incluye todos los cambios del repositorio seleccionado.\ncommit no construye ni prepara publicaciones. Para desplegar documentación resulta más adecuado deploy, que puede ejecutar el ciclo completo mediante --full.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
@@ -384,7 +384,7 @@
     "href": "chapters/03-commands/index.html#deploy",
     "title": "4  Ayuda",
     "section": "4.7 deploy",
-    "text": "4.7 deploy\niasi-dev deploy [-f|--full] [-m \"mensaje\"] [repositorio...]\nDespliega los cambios mediante commits y push. Cuando existe publish/, separa los cambios ordinarios y los artefactos publicados en commits distintos.\nSin --full no construye ni publica: despliega el estado que ya exista. Con --full, exige primero que build y publish terminen correctamente.\niasi-dev deploy --full -m \"actualiza manual\" ./iasi-quarto-docs\nEl mensaje predeterminado es deploy.\nCuando se indica un workspace, el comando procesa sus repositorios. Cuando se indica un repositorio, limita el despliegue a ese destino. Pase siempre una ruta explícita si no desea depender del directorio actual.",
+    "text": "4.7 deploy\niasi-dev deploy [-f|--full] [-m \"mensaje\"] [repositorio...]\nDespliega el estado local mediante un único commit por repositorio y push. El commit incluye conjuntamente las fuentes, los archivos derivados y, cuando existe, el contenido de publish/.\nSin --full no construye ni publica: despliega el estado que ya exista. Con --full, exige primero que build y publish terminen correctamente.\niasi-dev deploy --full -m \"actualiza manual\" iasi-quarto-docs\nEl mensaje predeterminado es deploy.\nCuando se indica un workspace, el comando procesa sus repositorios. Cuando se indica un repositorio, limita el despliegue a ese destino. Pase siempre una ruta explícita si no desea depender del directorio actual.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]

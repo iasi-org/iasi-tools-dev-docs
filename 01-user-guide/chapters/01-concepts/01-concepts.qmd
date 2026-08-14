@@ -128,7 +128,7 @@ El comando correspondiente es:
 iasi-dev deploy [destino]
 ```
 
-Cuando existe `publish/`, `deploy` separa los cambios ordinarios y los artefactos publicables en commits distintos antes de realizar `push`.
+`deploy` crea un único commit por repositorio con el estado local completo, incluido `publish/` cuando existe, y después realiza `push`.
 
 `deploy` sin opciones no construye ni publica. Utiliza el estado que ya existe.
 

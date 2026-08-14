@@ -328,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En este documento, cuando decimos <strong>desplegar</strong>, nos referimos a confirmar los cambios de uno o varios repositorios y enviarlos al remoto.</p>
 <p>El comando correspondiente es:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi-dev</span> deploy <span class="pp">[</span><span class="ss">destino</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Cuando existe <code>publish/</code>, <code>deploy</code> separa los cambios ordinarios y los artefactos publicables en commits distintos antes de realizar <code>push</code>.</p>
+<p><code>deploy</code> crea un único commit por repositorio con el estado local completo, incluido <code>publish/</code> cuando existe, y después realiza <code>push</code>.</p>
 <p><code>deploy</code> sin opciones no construye ni publica. Utiliza el estado que ya existe.</p>
 </section>
 <section id="despliegue-completo-y-deploy---full" class="level2" data-number="2.16">
