@@ -54,9 +54,9 @@ Desktop.ini
 *.swo
 *.tmp
 *.bak
+*.zip
 ~$*
 **/*.quarto_ipynb
-
 
 # Quarto
 .quarto/
@@ -70,4 +70,6 @@ _cache/
 
 # Logs
 *.log
-.Rproj.user
+
+# Codex
+.codex*
