@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b16ba7212847ce7939909783b50ea0ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b808e4060ecc782e0bebc2c887f613fa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -374,7 +377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">build</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>La primera reconoce una publicación IASI Quarto. La segunda ejecuta su ciclo completo de construcción.</p>
 <p>El paquete no sustituye a Quarto ni instala por sí mismo sus herramientas externas. Trabaja sobre un entorno en el que R y Quarto ya están disponibles.</p>
-<p><img src="index_files\mediabag\plantuml/7397cbafca8309ebc293ad2869f73857d38f8102.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/7397cbafca8309ebc293ad2869f73857d38f8102.png" class="img-fluid"></p>
 <p>La instalación se divide en tres pasos:</p>
 <pre class="text"><code>comprobar los requisitos
 instalar iasi.quarto
@@ -972,9 +975,9 @@ misma versión de la extensión
   -&gt; fuente del diagrama</code></pre>
 <p>La extensión lee esos recursos y los inserta después de la declaración <code>@startuml</code>.</p>
 <p>Una fuente como:</p>
-<p><img src="index_files\mediabag\plantuml/3a197d59993e71105d40ad1204484111431efe93.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/3a197d59993e71105d40ad1204484111431efe93.png" class="img-fluid"></p>
 <p>se prepara conceptualmente como:</p>
-<p><img src="index_files\mediabag\plantuml/118876d3f58862fdbbd924b27fae407d2ba90d7d.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/118876d3f58862fdbbd924b27fae407d2ba90d7d.png" class="img-fluid"></p>
 <p>El archivo indicado debe existir y ser legible durante la construcción.</p>
 <p>La ruta se interpreta dentro del contexto de la publicación, por lo que conviene mantener los estilos bajo una ubicación estable:</p>
 <pre class="text"><code>resources/plantuml/</code></pre>
@@ -1161,7 +1164,7 @@ Alice -&gt; Bob: Mensaje
 <h2 data-number="5.30" class="anchored" data-anchor-id="estructura-mínima"><span class="header-section-number">5.30</span> Estructura mínima</h2>
 <p>Cada bloque debe contener una fuente PlantUML válida.</p>
 <p>La estructura mínima es:</p>
-<p><img src="index_files\mediabag\plantuml/97e2250251a02e9fd99ece94d8688c9c383fc1af.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/97e2250251a02e9fd99ece94d8688c9c383fc1af.png" class="img-fluid"></p>
 <p><code>@startuml</code> abre el diagrama.</p>
 <p><code>@enduml</code> lo cierra.</p>
 <p>Entre ambas declaraciones se escribe su contenido.</p>
@@ -1178,7 +1181,7 @@ Servicio --&gt; Cliente: Respuesta
 <section id="primer-diagrama" class="level2" data-number="5.31">
 <h2 data-number="5.31" class="anchored" data-anchor-id="primer-diagrama"><span class="header-section-number">5.31</span> Primer diagrama</h2>
 <p>Este es un ejemplo completo:</p>
-<p><img src="index_files\mediabag\plantuml/c5c1bfec49b4c80d22a87584cc586b37f58bfa1e.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/c5c1bfec49b4c80d22a87584cc586b37f58bfa1e.png" class="img-fluid"></p>
 <p>Su fuente es:</p>
 <pre class="qmd"><code>```{.plantuml}
 @startuml
@@ -1198,7 +1201,7 @@ Aplicacion --&gt; Usuario: Respuesta
 <section id="diagramas-de-secuencia" class="level2" data-number="5.32">
 <h2 data-number="5.32" class="anchored" data-anchor-id="diagramas-de-secuencia"><span class="header-section-number">5.32</span> Diagramas de secuencia</h2>
 <p>Los diagramas de secuencia representan interacciones ordenadas en el tiempo.</p>
-<p><img src="index_files\mediabag\plantuml/bf4f5007fd006a7f682244db5fa14fe1ad9775c9.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/bf4f5007fd006a7f682244db5fa14fe1ad9775c9.png" class="img-fluid"></p>
 <p>La fuente:</p>
 <pre class="qmd"><code>```{.plantuml}
 @startuml
@@ -1228,7 +1231,7 @@ notas</code></pre>
 <section id="diagramas-de-componentes" class="level2" data-number="5.33">
 <h2 data-number="5.33" class="anchored" data-anchor-id="diagramas-de-componentes"><span class="header-section-number">5.33</span> Diagramas de componentes</h2>
 <p>Los diagramas de componentes muestran piezas de un sistema y sus dependencias.</p>
-<p><img src="index_files\mediabag\plantuml/9ae66934d8b0d83ca0d82b0c1e17e71b2ca79645.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/9ae66934d8b0d83ca0d82b0c1e17e71b2ca79645.png" class="img-fluid"></p>
 <p>La fuente:</p>
 <pre class="qmd"><code>```{.plantuml}
 @startuml
@@ -1246,15 +1249,15 @@ Filter --&gt; Quarto
 @enduml
 ```</code></pre>
 <p>Los alias:</p>
-<p><img src="index_files\mediabag\plantuml/aa6da1455281f0b3075374bd94e10324bd5609d6.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/aa6da1455281f0b3075374bd94e10324bd5609d6.png" class="img-fluid"></p>
 <p>permiten utilizar una etiqueta legible en el diagrama y un identificador breve en las relaciones.</p>
-<p><img src="index_files\mediabag\plantuml/cf2924ba7b520259c79d5f3d612c3759b127c9c1.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/cf2924ba7b520259c79d5f3d612c3759b127c9c1.png" class="img-fluid"></p>
 <p>Esta práctica mejora la legibilidad cuando los nombres contienen espacios o son demasiado largos.</p>
 </section>
 <section id="diagramas-de-actividad" class="level2" data-number="5.34">
 <h2 data-number="5.34" class="anchored" data-anchor-id="diagramas-de-actividad"><span class="header-section-number">5.34</span> Diagramas de actividad</h2>
 <p>Los diagramas de actividad son útiles para describir procesos y decisiones.</p>
-<p><img src="index_files\mediabag\plantuml/514eea9209a09e8180da67f6963517b5e80df09a.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/514eea9209a09e8180da67f6963517b5e80df09a.png" class="img-fluid"></p>
 <p>La fuente:</p>
 <pre class="qmd"><code>```{.plantuml}
 @startuml
@@ -1285,7 +1288,7 @@ ciclos de construcción</code></pre>
 <section id="diagramas-de-despliegue" class="level2" data-number="5.35">
 <h2 data-number="5.35" class="anchored" data-anchor-id="diagramas-de-despliegue"><span class="header-section-number">5.35</span> Diagramas de despliegue</h2>
 <p>Los diagramas de despliegue representan dónde se ejecutan los componentes.</p>
-<p><img src="index_files\mediabag\plantuml/2afb97212278ed953ffc77d44fa7606d7b8dc471.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/2afb97212278ed953ffc77d44fa7606d7b8dc471.png" class="img-fluid"></p>
 <p>La fuente:</p>
 <pre class="qmd"><code>```{.plantuml}
 @startuml
@@ -1316,9 +1319,9 @@ dependencias externas</code></pre>
 <h2 data-number="5.36" class="anchored" data-anchor-id="orientación"><span class="header-section-number">5.36</span> Orientación</h2>
 <p>PlantUML elige automáticamente una disposición, pero puede indicarse una orientación general.</p>
 <p>Horizontal:</p>
-<p><img src="index_files\mediabag\plantuml/891fbf4a746ef014cc2c43ec10f6cc20b418b67b.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/891fbf4a746ef014cc2c43ec10f6cc20b418b67b.png" class="img-fluid"></p>
 <p>Vertical:</p>
-<p><img src="index_files\mediabag\plantuml/4fc2749e8650becb380c0344e63287b3df4fec1a.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/4fc2749e8650becb380c0344e63287b3df4fec1a.png" class="img-fluid"></p>
 <p>Ejemplo:</p>
 <pre class="qmd"><code>```{.plantuml}
 @startuml
@@ -1338,7 +1341,7 @@ Compilador --&gt; Imagen
 <section id="alias-y-nombres-visibles" class="level2" data-number="5.37">
 <h2 data-number="5.37" class="anchored" data-anchor-id="alias-y-nombres-visibles"><span class="header-section-number">5.37</span> Alias y nombres visibles</h2>
 <p>Los elementos pueden tener un nombre visible y un alias interno.</p>
-<p><img src="index_files\mediabag\plantuml/1e685560a6cc921ab377360ebf742fa12d17241b.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/1e685560a6cc921ab377360ebf742fa12d17241b.png" class="img-fluid"></p>
 <p>Esto evita repetir etiquetas largas:</p>
 <pre class="text"><code>nombre visible
   Servidor PlantUML
@@ -1350,17 +1353,17 @@ alias utilizado en la fuente
 <section id="etiquetas-en-las-relaciones" class="level2" data-number="5.38">
 <h2 data-number="5.38" class="anchored" data-anchor-id="etiquetas-en-las-relaciones"><span class="header-section-number">5.38</span> Etiquetas en las relaciones</h2>
 <p>Las relaciones pueden describirse:</p>
-<p><img src="index_files\mediabag\plantuml/c48efce11e285031a916c412cbedfeb720baef85.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/c48efce11e285031a916c412cbedfeb720baef85.png" class="img-fluid"></p>
 <p>Las etiquetas deben aportar información que no resulte obvia por los nombres de los elementos.</p>
 <p>Una relación sin contenido adicional puede mantenerse sin texto:</p>
-<p><img src="index_files\mediabag\plantuml/cc9bd0c17d8be1f402ced2dc5c96377458dda75a.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/cc9bd0c17d8be1f402ced2dc5c96377458dda75a.png" class="img-fluid"></p>
 <p>Una relación con significado operacional debería nombrarlo:</p>
-<p><img src="index_files\mediabag\plantuml/feec7d3d9a583e4f39fac1e1f0b8a7f879b33df1.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/feec7d3d9a583e4f39fac1e1f0b8a7f879b33df1.png" class="img-fluid"></p>
 </section>
 <section id="notas" class="level2" data-number="5.39">
 <h2 data-number="5.39" class="anchored" data-anchor-id="notas"><span class="header-section-number">5.39</span> Notas</h2>
 <p>PlantUML permite añadir notas:</p>
-<p><img src="index_files\mediabag\plantuml/6cdd404aceea3d95446f80b6ec7a800f585f53a0.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/6cdd404aceea3d95446f80b6ec7a800f585f53a0.png" class="img-fluid"></p>
 <p>Ejemplo completo:</p>
 <pre class="qmd"><code>```{.plantuml}
 @startuml
@@ -1461,7 +1464,7 @@ eñes
 símbolos
 etiquetas en castellano</code></pre>
 <p>Por ejemplo:</p>
-<p><img src="index_files\mediabag\plantuml/c25059b58a41e7906928efe6e6d6742a347e92ce.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/c25059b58a41e7906928efe6e6d6742a347e92ce.png" class="img-fluid"></p>
 <p>Cuando aparecen caracteres incorrectos, deben revisarse:</p>
 <pre class="text"><code>la codificación del archivo .qmd
 la codificación del archivo .puml
@@ -1562,16 +1565,16 @@ estilo de componentes
 estilo de nodos
 convenciones visuales</code></pre>
 <p>Por ejemplo:</p>
-<p><img src="index_files\mediabag\plantuml/4a13e41bb99eb98854679c9341c49243e6b07a05.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/4a13e41bb99eb98854679c9341c49243e6b07a05.png" class="img-fluid"></p>
 <p>Este contenido es únicamente un ejemplo de estructura.</p>
 <p>Los colores, fuentes y convenciones definitivos pertenecen a la identidad visual de cada publicación.</p>
 </section>
 <section id="qué-debe-permanecer-en-el-diagrama" class="level2" data-number="5.52">
 <h2 data-number="5.52" class="anchored" data-anchor-id="qué-debe-permanecer-en-el-diagrama"><span class="header-section-number">5.52</span> Qué debe permanecer en el diagrama</h2>
 <p>El bloque <code>.plantuml</code> debe describir el contenido concreto:</p>
-<p><img src="index_files\mediabag\plantuml/8022c2f079b2a909fe890d573f1044e9895befb1.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/8022c2f079b2a909fe890d573f1044e9895befb1.png" class="img-fluid"></p>
 <p>No debería repetir reglas generales como:</p>
-<p><img src="index_files\mediabag\plantuml/e468ae564a5c087c25e5c1af3f93f8969536567c.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/e468ae564a5c087c25e5c1af3f93f8969536567c.png" class="img-fluid"></p>
 <p>Cuando esas reglas aparecen en cada documento:</p>
 <pre class="text"><code>aumenta la duplicación
 los diagramas pueden divergir
@@ -1584,9 +1587,9 @@ la fuente pierde legibilidad</code></pre>
 <p>Antes de compilar un diagrama, la extensión lee los archivos configurados.</p>
 <p>Después inserta su contenido inmediatamente después de la línea <code>@startuml</code>.</p>
 <p>Una fuente original:</p>
-<p><img src="index_files\mediabag\plantuml/3a197d59993e71105d40ad1204484111431efe93.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/3a197d59993e71105d40ad1204484111431efe93.png" class="img-fluid"></p>
 <p>se prepara conceptualmente como:</p>
-<p><img src="index_files\mediabag\plantuml/e0b62b04b167f22f47c285b0b87d250b2c1e861f.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/e0b62b04b167f22f47c285b0b87d250b2c1e861f.png" class="img-fluid"></p>
 <p>El servidor recibe la fuente ya preparada.</p>
 <p>Por tanto, el estilo forma parte de la compilación y también influye en la identidad utilizada por la caché.</p>
 <pre class="text"><code>cambia el estilo
@@ -1639,7 +1642,7 @@ los archivos siguen siendo fáciles de localizar</code></pre>
 <section id="estilo-base-recomendado" class="level2" data-number="5.56">
 <h2 data-number="5.56" class="anchored" data-anchor-id="estilo-base-recomendado"><span class="header-section-number">5.56</span> Estilo base recomendado</h2>
 <p>Un punto de partida sencillo podría ser:</p>
-<p><img src="index_files\mediabag\plantuml/1f61aa86f280a933b91295733be80df17e3e4cfe.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/1f61aa86f280a933b91295733be80df17e3e4cfe.png" class="img-fluid"></p>
 <p>El objetivo no es decorar cada elemento.</p>
 <p>El objetivo es conseguir que todos los diagramas pertenezcan visualmente a la misma publicación.</p>
 </section>
@@ -1648,19 +1651,19 @@ los archivos siguen siendo fáciles de localizar</code></pre>
 <p>PlantUML permite configurar familias concretas.</p>
 <section id="rectángulos" class="level3" data-number="5.57.1">
 <h3 data-number="5.57.1" class="anchored" data-anchor-id="rectángulos"><span class="header-section-number">5.57.1</span> Rectángulos</h3>
-<p><img src="index_files\mediabag\plantuml/68fba5a85f8ec00afcaa93030f9a2fcbcba17a1a.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/68fba5a85f8ec00afcaa93030f9a2fcbcba17a1a.png" class="img-fluid"></p>
 </section>
 <section id="componentes" class="level3" data-number="5.57.2">
 <h3 data-number="5.57.2" class="anchored" data-anchor-id="componentes"><span class="header-section-number">5.57.2</span> Componentes</h3>
-<p><img src="index_files\mediabag\plantuml/d3460702eb8541c0399c6a54defc82e441175df6.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/d3460702eb8541c0399c6a54defc82e441175df6.png" class="img-fluid"></p>
 </section>
 <section id="secuencias" class="level3" data-number="5.57.3">
 <h3 data-number="5.57.3" class="anchored" data-anchor-id="secuencias"><span class="header-section-number">5.57.3</span> Secuencias</h3>
-<p><img src="index_files\mediabag\plantuml/efeb4053662eb2c769e5ae4ad229668877ac4c5c.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/efeb4053662eb2c769e5ae4ad229668877ac4c5c.png" class="img-fluid"></p>
 </section>
 <section id="actividades" class="level3" data-number="5.57.4">
 <h3 data-number="5.57.4" class="anchored" data-anchor-id="actividades"><span class="header-section-number">5.57.4</span> Actividades</h3>
-<p><img src="index_files\mediabag\plantuml/b7446316f8531faeb2b58fef39503bc21116cdc8.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/b7446316f8531faeb2b58fef39503bc21116cdc8.png" class="img-fluid"></p>
 <p>No todas las publicaciones necesitan configurar todos los tipos.</p>
 <p>Deben añadirse reglas cuando existe un diagrama real que las utiliza.</p>
 </section>
@@ -1691,9 +1694,9 @@ base de datos en un tercero</code></pre>
 <h2 data-number="5.59" class="anchored" data-anchor-id="macros-y-convenciones-reutilizables"><span class="header-section-number">5.59</span> Macros y convenciones reutilizables</h2>
 <p>El archivo <code>.puml</code> también puede definir macros para elementos frecuentes.</p>
 <p>Por ejemplo:</p>
-<p><img src="index_files\mediabag\plantuml/2bd3514bb57fa33dc407b554a2df2c5437509216.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/2bd3514bb57fa33dc407b554a2df2c5437509216.png" class="img-fluid"></p>
 <p>Y después:</p>
-<p><img src="index_files\mediabag\plantuml/b0f1f2794fa980fb266a867564ab8100100da510.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/b0f1f2794fa980fb266a867564ab8100100da510.png" class="img-fluid"></p>
 <p>Las macros pueden reducir repetición cuando representan una convención real del proyecto.</p>
 <p>Deben utilizarse con moderación.</p>
 <p>Una macro demasiado abstracta puede ocultar la sintaxis y dificultar que otro autor comprenda el diagrama.</p>
@@ -1702,9 +1705,9 @@ base de datos en un tercero</code></pre>
 <h2 data-number="5.60" class="anchored" data-anchor-id="estereotipos"><span class="header-section-number">5.60</span> Estereotipos</h2>
 <p>Los estereotipos permiten aplicar estilos diferenciados.</p>
 <p>Por ejemplo, en el archivo compartido:</p>
-<p><img src="index_files\mediabag\plantuml/b21b26d9bdb2f553ff3afeef84bf64ac3a3a5fd5.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/b21b26d9bdb2f553ff3afeef84bf64ac3a3a5fd5.png" class="img-fluid"></p>
 <p>Y en el documento:</p>
-<p><img src="index_files\mediabag\plantuml/8c985ca5832f9fbc1185718b31ac138ab030b5d1.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/8c985ca5832f9fbc1185718b31ac138ab030b5d1.png" class="img-fluid"></p>
 <p>Esta técnica mantiene el significado dentro de la fuente:</p>
 <pre class="text"><code>&lt;&lt;External&gt;&gt;</code></pre>
 <p>y la apariencia dentro del estilo compartido.</p>
@@ -1713,7 +1716,7 @@ base de datos en un tercero</code></pre>
 <h2 data-number="5.61" class="anchored" data-anchor-id="fuentes"><span class="header-section-number">5.61</span> Fuentes</h2>
 <p>La fuente configurada debe existir en el entorno donde PlantUML genera la imagen.</p>
 <p>Un nombre como:</p>
-<p><img src="index_files\mediabag\plantuml/d3875fcd27016ccbd68983ab9c5941f81b6d1e7d.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/d3875fcd27016ccbd68983ab9c5941f81b6d1e7d.png" class="img-fluid"></p>
 <p>puede funcionar en un equipo y no estar disponible dentro de otro servidor o contenedor.</p>
 <p>Para una construcción reproducible deben utilizarse fuentes disponibles en la infraestructura elegida.</p>
 <p>Cuando la fuente no existe, PlantUML puede sustituirla por otra.</p>
@@ -1727,7 +1730,7 @@ distribución del diagrama</code></pre>
 <section id="transparencia-y-fondo" class="level2" data-number="5.62">
 <h2 data-number="5.62" class="anchored" data-anchor-id="transparencia-y-fondo"><span class="header-section-number">5.62</span> Transparencia y fondo</h2>
 <p>Para integrar los diagramas en HTML y PDF puede utilizarse un fondo transparente:</p>
-<p><img src="index_files\mediabag\plantuml/65de6081e5a02e3ab2ddf8b0570197e4a8b5ed20.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/65de6081e5a02e3ab2ddf8b0570197e4a8b5ed20.png" class="img-fluid"></p>
 <p>Esto permite que la imagen adopte el fondo visual del documento.</p>
 <p>Sin embargo, todos los textos, líneas y rellenos deben mantener contraste suficiente tanto en pantalla como en impresión.</p>
 <p>Un diagrama diseñado únicamente para un fondo oscuro puede resultar ilegible en PDF.</p>
@@ -1897,7 +1900,7 @@ cambia la versión de la extensión
 5. reutiliza o compila
 6. entrega la imagen a Pandoc</code></pre>
 <p>El flujo puede representarse así:</p>
-<p><img src="index_files\mediabag\plantuml/9880534f245b8cd3041525e398cad34673fba645.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/9880534f245b8cd3041525e398cad34673fba645.png" class="img-fluid"></p>
 </section>
 <section id="acierto-de-caché" class="level2" data-number="5.72">
 <h2 data-number="5.72" class="anchored" data-anchor-id="acierto-de-caché"><span class="header-section-number">5.72</span> Acierto de caché</h2>
@@ -2169,7 +2172,7 @@ una normalización de formato que no se está ejecutando</code></pre>
 <span id="cb202-3"><a href="#cb202-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>La imagen debe reutilizarse.</p>
 <p>Después, cambie el texto:</p>
-<p><img src="index_files\mediabag\plantuml/f5ba18f8895268e8c479f7a91cf8a88181609fea.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/f5ba18f8895268e8c479f7a91cf8a88181609fea.png" class="img-fluid"></p>
 <p>La siguiente construcción debe generar una entrada nueva.</p>
 <p>Finalmente, restaure el contenido original.</p>
 <p>La extensión podrá reutilizar la entrada anterior si todavía existe.</p>
@@ -2892,9 +2895,9 @@ cambiar la orientación
 acortar etiquetas
 crear una vista general y otra de detalle</code></pre>
 <p>Puede probarse:</p>
-<p><img src="index_files\mediabag\plantuml/4fc2749e8650becb380c0344e63287b3df4fec1a.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/4fc2749e8650becb380c0344e63287b3df4fec1a.png" class="img-fluid"></p>
 <p>en lugar de:</p>
-<p><img src="index_files\mediabag\plantuml/891fbf4a746ef014cc2c43ec10f6cc20b418b67b.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/891fbf4a746ef014cc2c43ec10f6cc20b418b67b.png" class="img-fluid"></p>
 <p>No conviene resolver toda la complejidad reduciendo la tipografía hasta convertir el diagrama en polvo técnico.</p>
 </section>
 <section id="la-tipografía-cambia" class="level2" data-number="5.127">
@@ -2902,7 +2905,7 @@ crear una vista general y otra de detalle</code></pre>
 <p>El servidor PlantUML utiliza las fuentes disponibles en su propio entorno.</p>
 <p>Un contenedor puede no tener la misma tipografía que el equipo anfitrión.</p>
 <p>Si el estilo declara:</p>
-<p><img src="index_files\mediabag\plantuml/d3875fcd27016ccbd68983ab9c5941f81b6d1e7d.png" class="img-fluid"></p>
+<p><img src="index_files/mediabag/plantuml/d3875fcd27016ccbd68983ab9c5941f81b6d1e7d.png" class="img-fluid"></p>
 <p>pero Arial no existe dentro del servidor, PlantUML puede sustituirla.</p>
 <p>Esto puede cambiar:</p>
 <pre class="text"><code>anchos
