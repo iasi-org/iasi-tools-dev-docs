@@ -61,18 +61,18 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="./">
 <link href="./chapters/01-concepts/index.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script><script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c574c73dd0d0ff61020859ffc61752ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+<link href="site_libs/bootstrap/bootstrap-4175aa2c1496759de0e1f19795e234b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/iasi-1.0.0/iasi.js"></script><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -93,50 +93,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const banner = document.querySelector("#quarto-announcement .iasi-ants-image");
+
+  const bootstrap = document.querySelector("link#quarto-bootstrap");
+
+
+
+  if (!banner || !bootstrap) return;
+
+
+
+  const siteRoot = bootstrap.href.replace(/site_libs\/bootstrap\/[^/]+$/i, "");
+
+  banner.src = new URL("resources/images/ants.png", siteRoot).href;
+
+});
+
+</script>
 </head>
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-announcement" data-announcement-id="924b3bb06044a6f8e6a5618432e2a604" class="alert alert-light hidden"><div class="quarto-announcement-content">
+<p><img src="resources/images/ants.png" class="iasi-ants-image img-fluid"></p>
+</div></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">User Guide</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link active" href="./chapters/01-concepts/index.html" aria-current="page"> 
+<span class="menu-text">Conceptos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./chapters/02-getting-started/index.html"> 
+<span class="menu-text">Primeros pasos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./chapters/03-commands/index.html"> 
+<span class="menu-text">Comandos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./chapters/04-workflows/index.html"> 
+<span class="menu-text">Workflows</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./chapters/05-troubleshooting/index.html"> 
+<span class="menu-text">Diagnóstico</span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
+ <span class="menu-text">Guardar …</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">
+<li>
+    <a class="dropdown-item" href="./#iasi-exports">
+ <span class="dropdown-text">Guardar …</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://iasi-org.github.io/iasi-home/pages/common/manifesto-bilingual.html"> <i class="bi bi-translate" role="img" aria-label="Idioma / Language">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://iasi-org.github.io/iasi-home/pages/common/contact.html"> <i class="bi bi-envelope" role="img" aria-label="Contacto">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>  <span class="chapter-title">Introducción</span></a></li></ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>  <span class="chapter-title">IASI Dev User Guide</span></a></li></ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">IASI Dev User Guide</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introducción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">IASI Dev User Guide</span></span></a>
   <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--index-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--index-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </div>
 <ul id="iasi-sidebar--index-html" class="collapse list-unstyled sidebar-section depth2">
-<li class="sidebar-item-section">
-<a href="./index.html#introducci%C3%B3n" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">1</span> Introducción</a>
-  <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--index-html-1">
-<li><a href="./index.html#c%C3%B3mo-se-escribe-una-instrucci%C3%B3n" id="toc-cómo-se-escribe-una-instrucción" class="nav-link" data-scroll-target="#cómo-se-escribe-una-instrucción"><span class="header-section-number">1.1</span> Cómo se escribe una instrucción</a></li>
-  <li><a href="./index.html#recorrido-recomendado" id="toc-recorrido-recomendado" class="nav-link" data-scroll-target="#recorrido-recomendado"><span class="header-section-number">1.2</span> Recorrido recomendado</a></li>
-  </ul>
-<a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--index-html-1" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--index-html-1" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
-</li>
+<li><a href="./index.html#c%C3%B3mo-se-escribe-una-instrucci%C3%B3n" id="toc-cómo-se-escribe-una-instrucción" class="nav-link active" data-scroll-target="#cómo-se-escribe-una-instrucción"><span class="header-section-number">0.1</span> Cómo se escribe una instrucción</a></li>
   </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -240,13 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#introducci%C3%B3n" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">1</span> Introducción</a>
-  <ul class="collapse">
-<li><a href="#c%C3%B3mo-se-escribe-una-instrucci%C3%B3n" id="toc-cómo-se-escribe-una-instrucción" class="nav-link" data-scroll-target="#cómo-se-escribe-una-instrucción"><span class="header-section-number">1.1</span> Cómo se escribe una instrucción</a></li>
-  <li><a href="#recorrido-recomendado" id="toc-recorrido-recomendado" class="nav-link" data-scroll-target="#recorrido-recomendado"><span class="header-section-number">1.2</span> Recorrido recomendado</a></li>
-  </ul>
-</li>
+<li><a href="#c%C3%B3mo-se-escribe-una-instrucci%C3%B3n" id="toc-cómo-se-escribe-una-instrucción" class="nav-link active" data-scroll-target="#cómo-se-escribe-una-instrucción"><span class="header-section-number">0.1</span> Cómo se escribe una instrucción</a></li>
   </ul></nav>
 </div>
 <!-- main -->
@@ -272,13 +331,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="introducción" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Introducción</h1>
-<p><code>iasi-dev</code> es una herramienta que se utiliza escribiendo instrucciones en una terminal. Esas instrucciones permiten realizar las tareas habituales de desarrollo y operación del ecosistema IASI.</p>
-<p>Permite preparar un workspace, actualizar repositorios, construir y publicar documentación, desplegar cambios y gestionar los servicios locales con una interfaz común.</p>
-<p>Esta guía está dirigida a las personas que trabajan con la documentación y los proyectos IASI. Explica el vocabulario utilizado, qué instrucción elegir, qué resultado esperar y qué precauciones tomar.</p>
-<section id="cómo-se-escribe-una-instrucción" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="cómo-se-escribe-una-instrucción">
-<span class="header-section-number">1.1</span> Cómo se escribe una instrucción</h2>
+</header><p><code>iasi-dev</code> proporciona una interfaz común para realizar las tareas habituales de desarrollo y operación del ecosistema IASI desde la terminal.</p>
+<p>Permite preparar un workspace, actualizar repositorios, construir y publicar documentación, desplegar cambios y gestionar los servicios locales sin tener que recordar el mecanismo particular de cada repositorio o herramienta.</p>
+<p>Esta guía está dirigida a las personas que trabajan con los proyectos IASI. Explica el vocabulario utilizado, cómo preparar el entorno, qué comando elegir, qué resultado esperar y qué precauciones tomar.</p>
+<p>No describe la implementación interna de <code>iasi-dev</code>; describe <strong>cómo utilizarlo</strong>.</p>
+<p>El recorrido recomendado es sencillo:</p>
+<ol type="1">
+<li>conocer los conceptos y la nomenclatura que utiliza <code>iasi-dev</code>;</li>
+<li>preparar el entorno de trabajo;</li>
+<li>conocer los comandos disponibles;</li>
+<li>aplicar los workflows habituales;</li>
+<li>acudir a la sección de seguridad y diagnóstico cuando una operación no produzca el resultado esperado.</li>
+</ol>
+<p>Si ya conoce <code>iasi-dev</code>, puede ir directamente al capítulo que corresponda a la tarea que quiere realizar.</p>
+<section id="cómo-se-escribe-una-instrucción" class="level2" data-number="0.1"><h2 data-number="0.1" class="anchored" data-anchor-id="cómo-se-escribe-una-instrucción">
+<span class="header-section-number">0.1</span> Cómo se escribe una instrucción</h2>
 <div class="code-copy-outer-scaffold">
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi-dev</span> <span class="op">&lt;</span>comando<span class="op">&gt;</span> <span class="pp">[</span><span class="ss">opciones</span><span class="pp">]</span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
@@ -290,19 +357,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 <p>En esta guía, llamamos <strong>comando</strong> a la palabra que indica la operación principal, como <code>build</code> o <code>deploy</code>. Llamamos <strong>opción</strong> a un modificador precedido por <code>-</code> o <code>--</code>, como <code>--full</code>. Los valores entre corchetes son opcionales; los corchetes no se escriben.</p>
-</section><section id="recorrido-recomendado" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="recorrido-recomendado">
-<span class="header-section-number">1.2</span> Recorrido recomendado</h2>
-<ul>
-<li>empiece por <strong>Conceptos y nomenclatura</strong>;</li>
-<li>prepare su entorno con <strong>Primeros pasos</strong>;</li>
-<li>consulte <strong>Comandos</strong> cuando necesite conocer una operación concreta;</li>
-<li>utilice <strong>Workflows recomendados</strong> para realizar tareas completas;</li>
-<li>acuda a <strong>Seguridad y diagnóstico</strong> ante una duda o un fallo.</li>
-</ul>
-<p>El siguiente capítulo define las palabras utilizadas en el resto del manual. Ningún nombre de operación implica por sí solo las demás: construir, publicar, confirmar y desplegar son acciones diferentes.</p>
+<p>Una distinción es especialmente importante desde el principio: construir, publicar, confirmar y desplegar son operaciones diferentes. Ninguna de ellas implica automáticamente las demás salvo cuando el propio comando lo establece de forma explícita.</p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -710,9 +768,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Javier G. Grandez · IASI Rocks 🤘</p>
+</div>   
+    <div class="nav-footer-center">
+       
+    </div>
+    <div class="nav-footer-right">
+<p><span id="iasi-publish-date">Publicado: 26/08/2026</span></p>
+</div>
+  </div>
+</footer>
 </body>
 </html>

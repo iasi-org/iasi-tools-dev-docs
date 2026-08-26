@@ -1,6 +1,5 @@
----
-title: "IASI Dev User Guide"
----
+# IASI Dev User Guide
+
 
 `iasi-dev` proporciona una interfaz común para realizar las tareas habituales de desarrollo y operación del ecosistema IASI desde la terminal.
 
@@ -12,23 +11,23 @@ No describe la implementación interna de `iasi-dev`; describe **cómo utilizarl
 
 El recorrido recomendado es sencillo:
 
-1. conocer los conceptos y la nomenclatura que utiliza `iasi-dev`;
-2. preparar el entorno de trabajo;
-3. conocer los comandos disponibles;
-4. aplicar los workflows habituales;
-5. acudir a la sección de seguridad y diagnóstico cuando una operación no produzca el resultado esperado.
+1.  conocer los conceptos y la nomenclatura que utiliza `iasi-dev`;
+2.  preparar el entorno de trabajo;
+3.  conocer los comandos disponibles;
+4.  aplicar los workflows habituales;
+5.  acudir a la sección de seguridad y diagnóstico cuando una operación no produzca el resultado esperado.
 
 Si ya conoce `iasi-dev`, puede ir directamente al capítulo que corresponda a la tarea que quiere realizar.
 
 ## Cómo se escribe una instrucción
 
-```bash
+``` bash
 iasi-dev <comando> [opciones]
 ```
 
 Para consultar la ayuda disponible:
 
-```bash
+``` bash
 iasi-dev help
 iasi-dev help <comando>
 ```

@@ -1,6 +1,11 @@
 project:
   type: book
 
+profile:
+  default: html
+  group:
+    - [html, pdf, git]
+
 metadata-files:
   - _book-structure.yml
 
@@ -18,6 +23,19 @@ format:
     documentclass: scrreprt
     toc: true
     number-sections: true
+    colorlinks: false
+    include-in-header: resources/tex/title-page.tex
 
 execute:
   freeze: auto
+
+filters:
+  - iasi-plantuml
+  - resources/lua/iasi-js.lua
+
+filter-options:
+  plantuml:
+    enabled: true
+    server: http://localhost:10025
+    format: png
+    cache: true

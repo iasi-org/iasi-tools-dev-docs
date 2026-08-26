@@ -4,29 +4,21 @@
     "href": "index.html",
     "title": "IASI Dev User Guide",
     "section": "",
-    "text": "1 Introducción\niasi-dev es una herramienta que se utiliza escribiendo instrucciones en una terminal. Esas instrucciones permiten realizar las tareas habituales de desarrollo y operación del ecosistema IASI.\nPermite preparar un workspace, actualizar repositorios, construir y publicar documentación, desplegar cambios y gestionar los servicios locales con una interfaz común.\nEsta guía está dirigida a las personas que trabajan con la documentación y los proyectos IASI. Explica el vocabulario utilizado, qué instrucción elegir, qué resultado esperar y qué precauciones tomar.",
+    "text": "0.1 Cómo se escribe una instrucción\niasi-dev proporciona una interfaz común para realizar las tareas habituales de desarrollo y operación del ecosistema IASI desde la terminal.\nPermite preparar un workspace, actualizar repositorios, construir y publicar documentación, desplegar cambios y gestionar los servicios locales sin tener que recordar el mecanismo particular de cada repositorio o herramienta.\nEsta guía está dirigida a las personas que trabajan con los proyectos IASI. Explica el vocabulario utilizado, cómo preparar el entorno, qué comando elegir, qué resultado esperar y qué precauciones tomar.\nNo describe la implementación interna de iasi-dev; describe cómo utilizarlo.\nEl recorrido recomendado es sencillo:\nSi ya conoce iasi-dev, puede ir directamente al capítulo que corresponda a la tarea que quiere realizar.\nPara consultar la ayuda disponible:\nEn esta guía, llamamos comando a la palabra que indica la operación principal, como build o deploy. Llamamos opción a un modificador precedido por - o --, como --full. Los valores entre corchetes son opcionales; los corchetes no se escriben.\nUna distinción es especialmente importante desde el principio: construir, publicar, confirmar y desplegar son operaciones diferentes. Ninguna de ellas implica automáticamente las demás salvo cuando el propio comando lo establece de forma explícita.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
+      "Conceptos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>IASI Dev User Guide</span>"
     ]
   },
   {
     "objectID": "index.html#cómo-se-escribe-una-instrucción",
     "href": "index.html#cómo-se-escribe-una-instrucción",
     "title": "IASI Dev User Guide",
-    "section": "1.1 Cómo se escribe una instrucción",
-    "text": "1.1 Cómo se escribe una instrucción\niasi-dev &lt;comando&gt; [opciones]\nPara consultar la ayuda disponible:\niasi-dev help\niasi-dev help &lt;comando&gt;\nEn esta guía, llamamos comando a la palabra que indica la operación principal, como build o deploy. Llamamos opción a un modificador precedido por - o --, como --full. Los valores entre corchetes son opcionales; los corchetes no se escriben.",
+    "section": "",
+    "text": "iasi-dev &lt;comando&gt; [opciones]\n\niasi-dev help\niasi-dev help &lt;comando&gt;",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#recorrido-recomendado",
-    "href": "index.html#recorrido-recomendado",
-    "title": "IASI Dev User Guide",
-    "section": "1.2 Recorrido recomendado",
-    "text": "1.2 Recorrido recomendado\n\nempiece por Conceptos y nomenclatura;\nprepare su entorno con Primeros pasos;\nconsulte Comandos cuando necesite conocer una operación concreta;\nutilice Workflows recomendados para realizar tareas completas;\nacuda a Seguridad y diagnóstico ante una duda o un fallo.\n\nEl siguiente capítulo define las palabras utilizadas en el resto del manual. Ningún nombre de operación implica por sí solo las demás: construir, publicar, confirmar y desplegar son acciones diferentes.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
+      "Conceptos",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>IASI Dev User Guide</span>"
     ]
   },
   {
@@ -36,6 +28,7 @@
     "section": "",
     "text": "2.1 Workspace\nLas herramientas utilizadas por IASI comparten palabras como publicar o desplegar, pero no siempre les atribuyen el mismo significado.\nEn este documento, cada término tiene una definición concreta. Cuando decimos construir, publicar, confirmar o desplegar, nos referimos exclusivamente a las operaciones descritas aquí.\nEn este documento, cuando decimos workspace, nos referimos al directorio que contiene los repositorios IASI como carpetas hermanas.\nEl workspace permite ejecutar una misma operación sobre varios repositorios. No es en sí mismo un repositorio Git.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -46,6 +39,7 @@
     "section": "",
     "text": "iasi-org/\n├── iasi-common/\n├── iasi-quarto/\n├── iasi-quarto-docs/\n└── iasi-tools-dev/",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -56,6 +50,7 @@
     "section": "2.2 Git y GitHub",
     "text": "2.2 Git y GitHub\nEn este documento, cuando decimos Git, nos referimos al sistema que registra la historia y los cambios de los archivos de un proyecto.\nEn este documento, cuando decimos GitHub, nos referimos al servicio donde se alojan y comparten los repositorios remotos de IASI.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -66,6 +61,7 @@
     "section": "2.3 Repositorio",
     "text": "2.3 Repositorio\nEn este documento, cuando decimos repositorio, nos referimos a un directorio gestionado por Git y conectado normalmente con un repositorio remoto en GitHub.\nUn workspace contiene varios repositorios. Una operación puede dirigirse a todo el workspace, a un repositorio o a un directorio más concreto.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -76,6 +72,7 @@
     "section": "2.4 Destino",
     "text": "2.4 Destino\nEn este documento, cuando decimos destino, nos referimos a la ruta indicada al final de un comando para limitar su alcance.\niasi-dev build iasi-quarto-docs/01-user-guide\nEn este ejemplo, iasi-quarto-docs/01-user-guide es el destino. Cuando se omite, muchos comandos utilizan el directorio actual.\nLos comandos que seleccionan publicaciones o repositorios siguen una misma regla: sin destinos procesan todos los aplicables; con uno procesan solo ese destino; con varios procesan exactamente la selección indicada.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -86,6 +83,7 @@
     "section": "2.5 Publicación",
     "text": "2.5 Publicación\nEn este documento, cuando decimos publicación, nos referimos a un proyecto documental reconocido por iasi.quarto que puede generar uno o varios formatos de salida.\nUna publicación puede ser, por ejemplo, una guía de usuario. Un repositorio puede contener una sola publicación o varias.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -96,6 +94,7 @@
     "section": "2.6 Fuentes",
     "text": "2.6 Fuentes\nEn este documento, cuando decimos fuentes, nos referimos a los archivos editables a partir de los que se genera una publicación: documentos QMD, configuración, imágenes y otros recursos.\nLas fuentes no son todavía el sitio HTML ni el PDF final.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -106,6 +105,7 @@
     "section": "2.7 Formato de salida",
     "text": "2.7 Formato de salida\nEn este documento, cuando decimos formato de salida, nos referimos a una de las formas finales que puede generar una publicación, como HTML o PDF.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -116,6 +116,7 @@
     "section": "2.8 Construir y build",
     "text": "2.8 Construir y build\nEn este documento, cuando decimos construir, nos referimos a transformar las fuentes en uno o varios formatos de salida que puedan revisarse.\nEl comando correspondiente es:\niasi-dev build [destino]\nConstruir no crea commits, no realiza push y no despliega cambios. Tampoco significa necesariamente que el contenido de publish/ haya sido actualizado.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -126,6 +127,7 @@
     "section": "2.9 Resultado de construcción",
     "text": "2.9 Resultado de construcción\nEn este documento, cuando decimos resultado de construcción, nos referimos al HTML, PDF u otro formato generado por build.\nEstos resultados sirven para comprobar la publicación antes de prepararla para el despliegue.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -136,6 +138,7 @@
     "section": "2.10 Artefacto publicable",
     "text": "2.10 Artefacto publicable\nEn este documento, cuando decimos artefacto publicable, nos referimos a un archivo o directorio preparado para ser distribuido, como un sitio HTML o un PDF.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -146,6 +149,7 @@
     "section": "2.11 Publicar, publish y publish/",
     "text": "2.11 Publicar, publish y publish/\nEn este documento, cuando decimos publicar como operación, nos referimos a reunir resultados ya construidos dentro del directorio publish/.\nEl comando correspondiente es:\niasi-dev publish [destino]\nEn este documento, cuando escribimos publish/, nos referimos al directorio que contiene los artefactos publicables preparados para su despliegue.\npublish no sustituye a build: prepara resultados existentes. Tampoco crea commits ni realiza push.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -156,6 +160,7 @@
     "section": "2.12 Cambio Git",
     "text": "2.12 Cambio Git\nEn este documento, cuando decimos cambio Git, nos referimos a una diferencia local que Git puede registrar: un archivo añadido, modificado o eliminado.\nUn resultado construido puede producir cambios Git si sus archivos se guardan dentro del repositorio.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -166,6 +171,7 @@
     "section": "2.13 Remoto y push",
     "text": "2.13 Remoto y push\nEn este documento, cuando decimos remoto, nos referimos al repositorio Git compartido, normalmente alojado en GitHub.\nEn este documento, cuando decimos realizar push, nos referimos a enviar al remoto los commits locales.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -176,6 +182,7 @@
     "section": "2.14 Confirmar, commit y commit",
     "text": "2.14 Confirmar, commit y commit\nEn este documento, cuando decimos confirmar cambios, nos referimos a crear un commit de Git que registra un conjunto de cambios con un mensaje.\nEl comando iasi-dev commit añade todos los cambios del repositorio seleccionado, crea el commit y lo envía al remoto:\niasi-dev commit -m \"mensaje\" [repositorio]\nPor tanto, en esta guía commit no significa únicamente crear el commit local: el comando también realiza push.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -186,6 +193,7 @@
     "section": "2.15 Desplegar y deploy",
     "text": "2.15 Desplegar y deploy\nEn este documento, cuando decimos desplegar, nos referimos a confirmar los cambios de uno o varios repositorios y enviarlos al remoto.\nEl comando correspondiente es:\niasi-dev deploy [destino]\ndeploy crea un único commit por repositorio con el estado local completo, incluido publish/ cuando existe, y después realiza push.\ndeploy sin opciones no construye ni publica. Utiliza el estado que ya existe.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -196,6 +204,7 @@
     "section": "2.16 Despliegue completo y deploy --full",
     "text": "2.16 Despliegue completo y deploy --full\nEn este documento, cuando decimos despliegue completo, nos referimos a ejecutar consecutivamente:\n\nbuild;\npublish;\ndeploy.\n\nEl comando correspondiente es:\niasi-dev deploy --full [destino]\nSi la construcción o la publicación falla, el despliegue no continúa.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -206,6 +215,7 @@
     "section": "2.17 Flujo documental",
     "text": "2.17 Flujo documental\nCon las definiciones anteriores, el recorrido completo es:\nfuentes\n  → build\n  → resultados de construcción\n  → publish\n  → artefactos en publish/\n  → deploy\n  → commits enviados al remoto\nDurante la edición normal se repite build y se revisan los resultados. publish se utiliza cuando los resultados ya están preparados. deploy se reserva para enviar cambios.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -216,6 +226,7 @@
     "section": "2.18 Clonar",
     "text": "2.18 Clonar\nEn este documento, cuando decimos clonar, nos referimos a obtener una nueva copia local de un repositorio remoto.\nEl comando iasi-dev clone trabaja con el conjunto de repositorios IASI y, por defecto, recrea las copias existentes. clone --resume conserva las que ya existen y añade solo las ausentes.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -226,6 +237,7 @@
     "section": "2.19 Actualizar con pull",
     "text": "2.19 Actualizar con pull\nEn este documento, cuando decimos actualizar con iasi-dev pull, nos referimos a sustituir el estado local por el estado de la rama remota predeterminada.\nNo debe confundirse con una integración conservadora: el comando elimina cambios locales y archivos no seguidos.\npull opera siempre sobre repositorios completos. Para seleccionar uno o varios, recibe únicamente los nombres de sus directorios raíz, donde se encuentra .git. Sin nombres, selecciona todos los repositorios aplicables.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -236,6 +248,7 @@
     "section": "2.20 Sincronizar con sync",
     "text": "2.20 Sincronizar con sync\nEn este documento, cuando decimos sincronizar, nos referimos a copiar desde iasi-common un archivo o directorio compartido hacia las copias existentes en el workspace.\nsync no consulta GitHub, no crea commits y no despliega los cambios copiados.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -246,6 +259,7 @@
     "section": "2.21 Log",
     "text": "2.21 Log\nEn este documento, cuando decimos log, nos referimos al archivo con el registro detallado de una ejecución.\nLos logs se guardan normalmente bajo logs/ y utilizan una marca temporal para distinguir cada ejecución.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -256,6 +270,7 @@
     "section": "2.22 Elegir la operación",
     "text": "2.22 Elegir la operación\n\n\n\n\n\n\n\nQuiero…\nOperación\n\n\n\n\npreparar por primera vez todo el entorno IASI\ninit\n\n\nrecuperar todos los repositorios desde cero\nclone\n\n\nañadir únicamente los repositorios que faltan\nclone --resume\n\n\nsustituir el estado local por el remoto\npull\n\n\ndistribuir un recurso de iasi-common\nsync\n\n\ngenerar resultados revisables\nbuild\n\n\npreparar artefactos en publish/\npublish\n\n\nconfirmar y enviar el estado ya preparado\ndeploy\n\n\nconstruir, publicar y desplegar\ndeploy --full\n\n\nconfirmar y enviar todos los cambios sin tratamiento documental\ncommit\n\n\ngestionar los servicios locales\ndocker",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -266,6 +281,7 @@
     "section": "",
     "text": "3.1 Workspace recomendado\niasi-dev se ejecuta con Bash. Además, cada comando necesita las herramientas relacionadas con su tarea:\nAntes de comenzar, autentique GitHub CLI:\nLos repositorios IASI se mantienen como directorios hermanos dentro de un workspace común:\nEsta disposición es importante para los comandos que operan sobre varios repositorios y para sync, que toma iasi-common como origen.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -276,6 +292,7 @@
     "section": "",
     "text": "iasi-org/\n├── iasi-common/\n├── iasi-quarto/\n├── iasi-quarto-docs/\n├── iasi-tools-dev/\n└── logs/",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -286,6 +303,7 @@
     "section": "3.2 Hacer accesible el comando",
     "text": "3.2 Hacer accesible el comando\nAñada el directorio bin de iasi-tools-dev a PATH. Después compruebe:\niasi-dev help\nTambién puede invocarlo mediante su ruta completa desde Bash:\n/ruta/al/workspace/iasi-tools-dev/bin/iasi-dev help",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -296,6 +314,7 @@
     "section": "3.3 Inicialización completa",
     "text": "3.3 Inicialización completa\nPara preparar un workspace nuevo:\niasi-dev init /ruta/al/workspace\nLa inicialización ejecuta, por orden:\n\nrecreación de los repositorios;\ninstalación de iasi.quarto;\nconfiguración de iasi-lua en los proyectos Quarto;\narranque de los contenedores Docker.\n\ninit incluye una operación destructiva de clonación. Revise el capítulo de seguridad antes de usarlo sobre un workspace que contenga trabajo local.\nOpciones comunes de inicialización:\niasi-dev init -v /ruta/al/workspace   # más detalle\niasi-dev init -s /ruta/al/workspace   # modo silencioso\niasi-dev init -y /ruta/al/workspace   # sin confirmación\nAl terminar, compruebe el entorno con:\niasi-dev docker status\niasi-dev build /ruta/al/workspace/iasi-tools-dev-docs/01-user-guide\nSi ya dispone de un workspace con cambios propios, no utilice init para actualizarlo. Elija clone --resume para completar los repositorios ausentes o actualice manualmente los repositorios cuyo trabajo necesite conservar.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -306,6 +325,7 @@
     "section": "3.4 Logs",
     "text": "3.4 Logs\nLa salida detallada de las herramientas subyacentes se guarda en archivos con marca temporal dentro de logs/. La consola muestra principalmente mensajes de estado de IASI.\nCuando una operación falle, conserve la ruta del log indicada por el comando: contiene el diagnóstico que normalmente no aparece completo en pantalla.\nLa opción -v muestra más mensajes útiles durante la ejecución, pero el log sigue siendo la fuente principal para investigar un fallo.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -316,6 +336,7 @@
     "section": "",
     "text": "4.1 clone\nLa ayuda del propio CLI es la referencia más inmediata para las opciones disponibles en la versión instalada.\nObtiene de GitHub la lista de repositorios no archivados de la organización y los clona en el workspace.\nPor defecto recrea los destinos: si un repositorio ya existe, se elimina antes de clonarlo. Use --resume para clonar únicamente los repositorios que todavía no existen.\nOpciones: -v, -s, -y/--yes y -r/--resume.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -326,6 +347,7 @@
     "section": "",
     "text": "iasi-dev clone [opciones] [workspace]\n\n\niasi-dev clone --resume /ruta/al/workspace",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -336,6 +358,7 @@
     "section": "4.2 pull",
     "text": "4.2 pull\niasi-dev pull [opciones] [repositorio...]\npull utiliza el workspace iasi-org. Sin argumento sincroniza todos sus repositorios. Para actualizar uno o varios, se indican los nombres de sus directorios dentro de iasi-org.\nEn este comando no se utilizan rutas completas ni directorios internos del repositorio. El directorio indicado es siempre la raíz del repositorio y contiene .git.\npull prioriza deliberadamente el remoto: restablece el repositorio local a la rama remota predeterminada y elimina archivos no seguidos. No equivale a un git pull conservador.\ncd /c/iasi-org\niasi-dev pull iasi-quarto-docs\niasi-dev pull iasi-quarto-docs iasi-lua-docs\nOpciones: -v, -s y -y/--yes.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -346,6 +369,7 @@
     "section": "4.3 sync",
     "text": "4.3 sync\niasi-dev sync ruta [ruta...]\nPropaga desde iasi-common archivos o directorios que ya tengan copias con el mismo nombre en el workspace.\niasi-dev sync resources\niasi-dev sync _quarto.yml resources\nLos directorios se reemplazan completos, incluidos los archivos eliminados en el origen. No se crean copias donde el nombre todavía no exista. Si hay más de una entrada con el mismo nombre en iasi-common, el comando se detiene para evitar elegir un origen ambiguo.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -356,6 +380,7 @@
     "section": "4.4 build",
     "text": "4.4 build\niasi-dev build [-v] [repositorio-o-directorio...]\nBusca publicaciones IASI Quarto por debajo del destino y construye sus formatos configurados. Los directorios llamados tests se excluyen.\nEl destino puede ser una ruta anidada:\niasi-dev build iasi-quarto-docs/01-user-guide\nEn ese caso se procesa esa publicación y las publicaciones situadas por debajo de ella; la operación no se amplía automáticamente a todo el repositorio Git contenedor.\nSin argumento, la búsqueda comienza en el directorio actual:\ncd /ruta/al/workspace/iasi-quarto-docs\niasi-dev build",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -366,6 +391,7 @@
     "section": "4.5 publish",
     "text": "4.5 publish\niasi-dev publish [-v] [repositorio-o-directorio...]\nEnsambla en publish/ los artefactos que ya existen. No sustituye la construcción previa. En un multiproyecto, las publicaciones se reúnen bajo el publish/ de la raíz.\nTambién admite destinos anidados con el mismo alcance que build.\nUtilice publish cuando ya haya revisado la construcción y quiera preparar el contenido que posteriormente se desplegará.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -376,6 +402,7 @@
     "section": "4.6 commit",
     "text": "4.6 commit\niasi-dev commit -m \"mensaje\" [repositorio...]\nAñade todos los cambios, crea un commit y lo envía al remoto. Sin repositorio procesa los repositorios Git situados directamente bajo el directorio actual.\nEl mensaje es obligatorio. Revise siempre git status y el diff antes de ejecutar el comando, porque incluye todos los cambios del repositorio seleccionado.\ncommit no construye ni prepara publicaciones. Para desplegar documentación resulta más adecuado deploy, que puede ejecutar el ciclo completo mediante --full.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -386,6 +413,7 @@
     "section": "4.7 deploy",
     "text": "4.7 deploy\niasi-dev deploy [-f|--full] [-m \"mensaje\"] [repositorio...]\nDespliega el estado local mediante un único commit por repositorio y push. El commit incluye conjuntamente las fuentes, los archivos derivados y, cuando existe, el contenido de publish/.\nSin --full no construye ni publica: despliega el estado que ya exista. Con --full, exige primero que build y publish terminen correctamente.\niasi-dev deploy --full -m \"actualiza manual\" iasi-quarto-docs\nEl mensaje predeterminado es deploy.\nCuando se indica un workspace, el comando procesa sus repositorios. Cuando se indica un repositorio, limita el despliegue a ese destino. Pase siempre una ruta explícita si no desea depender del directorio actual.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -396,6 +424,7 @@
     "section": "4.8 docker",
     "text": "4.8 docker\niasi-dev docker [start|stop|status]\nGestiona los servicios declarados en docker/iasi-compose.yml. Sin subcomando utiliza start.\nLa configuración actual incluye PlantUML, Ollama y Open WebUI. Los puertos y volúmenes efectivos deben consultarse en el archivo Compose de la versión instalada.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -406,6 +435,7 @@
     "section": "",
     "text": "5.1 Publicación completa de un repositorio\nPara editar y comprobar una publicación concreta:\nRevise el resultado generado. Cuando esté listo para preparar los artefactos publicables:\nEl uso de una ruta anidada evita reconstruir todas las publicaciones del repositorio.\nEste es el flujo recomendado mientras se escribe: repetir build, revisar y corregir. No es necesario ejecutar publish después de cada cambio.\nDesde el workspace:\nSepare construcción y publicación cuando quiera inspeccionar los resultados antes de alterar publish/.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -416,6 +446,7 @@
     "section": "",
     "text": "iasi-dev build ./iasi-quarto-docs\niasi-dev publish ./iasi-quarto-docs",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -426,6 +457,7 @@
     "section": "5.2 Despliegue completo",
     "text": "5.2 Despliegue completo\nCuando quiere construir, publicar y enviar los cambios en una sola operación:\niasi-dev deploy --full -m \"actualiza documentación\" ./iasi-quarto-docs\nAntes de hacerlo:\n\nrevise el estado Git;\nconfirme que el destino es el repositorio correcto;\nasegúrese de que no hay cambios ajenos que no deban incluirse;\ncompruebe la autenticación y el remoto configurado.\n\nSi prefiere revisar cada fase, utilice el flujo explícito:\niasi-dev build ./iasi-quarto-docs\n# revisar los resultados\niasi-dev publish ./iasi-quarto-docs\n# revisar publish/\niasi-dev deploy -m \"actualiza documentación\" ./iasi-quarto-docs\ndeploy sin --full utiliza los archivos que ya están preparados y evita repetir la construcción.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -436,6 +468,7 @@
     "section": "5.3 Actualizar el workspace desde GitHub",
     "text": "5.3 Actualizar el workspace desde GitHub\nSi no hay trabajo local que conservar:\ncd /c/iasi-org\niasi-dev pull -y\nPara un único repositorio:\niasi-dev pull -y iasi-quarto-docs\niasi-dev pull -y iasi-quarto-docs iasi-lua-docs\nEl argumento es el nombre del directorio situado directamente dentro de iasi-org. No se indica una ruta completa ni un subdirectorio como iasi-quarto-docs/01-user-guide.\nNo utilice este flujo para integrar cambios remotos con trabajo local: pull reemplaza el estado completo del repositorio local.\nSi existe cualquier duda, ejecute primero git status dentro de los repositorios afectados y haga una copia externa.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -446,6 +479,7 @@
     "section": "5.4 Incorporar un repositorio ausente",
     "text": "5.4 Incorporar un repositorio ausente\nPara completar un workspace sin recrear lo existente:\niasi-dev clone --resume /ruta/al/workspace",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -456,6 +490,7 @@
     "section": "5.5 Propagar un recurso común",
     "text": "5.5 Propagar un recurso común\nDespués de revisar el origen en iasi-common:\niasi-dev sync nombre-del-recurso\nRevise después los diffs de todos los repositorios modificados. sync copia contenido; no crea commits ni publica los cambios.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -466,6 +501,7 @@
     "section": "5.6 Gestionar servicios locales",
     "text": "5.6 Gestionar servicios locales\niasi-dev docker start\niasi-dev docker status\niasi-dev docker stop\nUse status antes de diagnosticar como fallo documental un servicio que simplemente no está iniciado.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -476,6 +512,7 @@
     "section": "",
     "text": "6.1 El comando no se encuentra\nPreste especial atención a estos comandos:\nAntes de utilizarlos, revise git status, confirme las rutas resueltas y haga una copia externa de cualquier trabajo que no esté confirmado.\nLas opciones -y y --yes eliminan la confirmación; no reducen el alcance ni hacen recuperable la operación.\nCompruebe que está usando Bash y que el directorio iasi-tools-dev/bin pertenece a PATH:",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -486,6 +523,7 @@
     "section": "",
     "text": "command -v iasi-dev\niasi-dev help",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -496,6 +534,7 @@
     "section": "6.2 Un subcomando rechaza una opción",
     "text": "6.2 Un subcomando rechaza una opción\nLas opciones no son globales. Consulte la ayuda específica:\niasi-dev help &lt;comando&gt;\nPor ejemplo, -s está disponible en algunas operaciones de workspace, pero no en build o publish.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -506,6 +545,7 @@
     "section": "6.3 No se encuentra ninguna publicación",
     "text": "6.3 No se encuentra ninguna publicación\nCompruebe que el destino contiene una publicación reconocible por iasi.quarto y que no está dentro de un directorio tests, excluido del descubrimiento.\nSi solo desea una publicación anidada, pase su ruta exacta. Si desea todo el multiproyecto, pase la raíz que contiene las publicaciones.\nTambién puede haberse ejecutado el comando desde un directorio distinto del esperado. Repita la operación con una ruta explícita para eliminar esa ambigüedad.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -516,6 +556,7 @@
     "section": "6.4 Faltan Rscript o Quarto",
     "text": "6.4 Faltan Rscript o Quarto\nCompruebe que ambos comandos están disponibles desde la misma sesión de Bash en la que ejecuta iasi-dev:\ncommand -v Rscript\ncommand -v quarto\nLa presencia del CLI iasi-dev no implica que estas dependencias estén instaladas.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -526,6 +567,7 @@
     "section": "6.5 Fallo de GitHub o Git",
     "text": "6.5 Fallo de GitHub o Git\nCompruebe autenticación y remotos:\ngh auth status\ngit remote -v\nPara commit y deploy, verifique también que la rama admite push y que no necesita integrar cambios remotos.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -536,6 +578,7 @@
     "section": "6.6 No hay cambios para desplegar",
     "text": "6.6 No hay cambios para desplegar\nCompruebe el estado del repositorio:\ngit status\nSi esperaba cambios en publish/, asegúrese de haber ejecutado antes publish o utilice deploy --full. Construir una publicación no implica por sí solo preparar o desplegar sus artefactos.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -546,6 +589,7 @@
     "section": "6.7 Fallo de Docker",
     "text": "6.7 Fallo de Docker\niasi-dev docker status\ndocker compose version\nRevise si los puertos configurados ya están ocupados y consulte los logs del servicio afectado con Docker.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   },
@@ -556,6 +600,7 @@
     "section": "6.8 Consultar el log correcto",
     "text": "6.8 Consultar el log correcto\nBusque en el directorio logs/ del workspace el archivo cuyo nombre corresponde a la operación y a su marca temporal, por ejemplo:\niasi-build-YYYYMMDDhhmmss.log\niasi-publish-YYYYMMDDhhmmss.log\niasi-pull-YYYYMMDDhhmmss.log\nAl informar de un problema incluya el comando exacto, la ruta desde la que se ejecutó, el código de salida y el log correspondiente, eliminando previamente credenciales o datos sensibles.",
     "crumbs": [
+      "Conceptos",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>index.html</span>"
     ]
   }

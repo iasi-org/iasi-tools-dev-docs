@@ -1,0 +1,136 @@
+
+
+## Ayuda
+
+``` bash
+iasi-dev help
+iasi-dev help build
+```
+
+La ayuda del propio CLI es la referencia más inmediata para las opciones disponibles en la versión instalada.
+
+## `clone`
+
+``` bash
+iasi-dev clone [opciones] [workspace]
+```
+
+Obtiene de GitHub la lista de repositorios no archivados de la organización y los clona en el workspace.
+
+Por defecto recrea los destinos: si un repositorio ya existe, se elimina antes de clonarlo. Use `--resume` para clonar únicamente los repositorios que todavía no existen.
+
+``` bash
+iasi-dev clone --resume /ruta/al/workspace
+```
+
+Opciones: `-v`, `-s`, `-y`/`--yes` y `-r`/`--resume`.
+
+## `pull`
+
+``` bash
+iasi-dev pull [opciones] [repositorio...]
+```
+
+`pull` utiliza el workspace `iasi-org`. Sin argumento sincroniza todos sus repositorios. Para actualizar uno o varios, se indican los nombres de sus directorios dentro de `iasi-org`.
+
+En este comando no se utilizan rutas completas ni directorios internos del repositorio. El directorio indicado es siempre la raíz del repositorio y contiene `.git`.
+
+`pull` prioriza deliberadamente el remoto: restablece el repositorio local a la rama remota predeterminada y elimina archivos no seguidos. No equivale a un `git pull` conservador.
+
+``` bash
+cd /c/iasi-org
+iasi-dev pull iasi-quarto-docs
+iasi-dev pull iasi-quarto-docs iasi-lua-docs
+```
+
+Opciones: `-v`, `-s` y `-y`/`--yes`.
+
+## `sync`
+
+``` bash
+iasi-dev sync ruta [ruta...]
+```
+
+Propaga desde `iasi-common` archivos o directorios que ya tengan copias con el mismo nombre en el workspace.
+
+``` bash
+iasi-dev sync resources
+iasi-dev sync _quarto.yml resources
+```
+
+Los directorios se reemplazan completos, incluidos los archivos eliminados en el origen. No se crean copias donde el nombre todavía no exista. Si hay más de una entrada con el mismo nombre en `iasi-common`, el comando se detiene para evitar elegir un origen ambiguo.
+
+## `build`
+
+``` bash
+iasi-dev build [-v] [repositorio-o-directorio...]
+```
+
+Busca publicaciones IASI Quarto por debajo del destino y construye sus formatos configurados. Los directorios llamados `tests` se excluyen.
+
+El destino puede ser una ruta anidada:
+
+``` bash
+iasi-dev build iasi-quarto-docs/01-user-guide
+```
+
+En ese caso se procesa esa publicación y las publicaciones situadas por debajo de ella; la operación no se amplía automáticamente a todo el repositorio Git contenedor.
+
+Sin argumento, la búsqueda comienza en el directorio actual:
+
+``` bash
+cd /ruta/al/workspace/iasi-quarto-docs
+iasi-dev build
+```
+
+## `publish`
+
+``` bash
+iasi-dev publish [-v] [repositorio-o-directorio...]
+```
+
+Ensambla en `publish/` los artefactos que ya existen. No sustituye la construcción previa. En un multiproyecto, las publicaciones se reúnen bajo el `publish/` de la raíz.
+
+También admite destinos anidados con el mismo alcance que `build`.
+
+Utilice `publish` cuando ya haya revisado la construcción y quiera preparar el contenido que posteriormente se desplegará.
+
+## `commit`
+
+``` bash
+iasi-dev commit -m "mensaje" [repositorio...]
+```
+
+Añade todos los cambios, crea un commit y lo envía al remoto. Sin repositorio procesa los repositorios Git situados directamente bajo el directorio actual.
+
+El mensaje es obligatorio. Revise siempre `git status` y el diff antes de ejecutar el comando, porque incluye todos los cambios del repositorio seleccionado.
+
+`commit` no construye ni prepara publicaciones. Para desplegar documentación resulta más adecuado `deploy`, que puede ejecutar el ciclo completo mediante `--full`.
+
+## `deploy`
+
+``` bash
+iasi-dev deploy [-f|--full] [-m "mensaje"] [repositorio...]
+```
+
+Despliega el estado local mediante un único commit por repositorio y `push`. El commit incluye conjuntamente las fuentes, los archivos derivados y, cuando existe, el contenido de `publish/`.
+
+Sin `--full` no construye ni publica: despliega el estado que ya exista. Con `--full`, exige primero que `build` y `publish` terminen correctamente.
+
+``` bash
+iasi-dev deploy --full -m "actualiza manual" iasi-quarto-docs
+```
+
+El mensaje predeterminado es `deploy`.
+
+Cuando se indica un workspace, el comando procesa sus repositorios. Cuando se indica un repositorio, limita el despliegue a ese destino. Pase siempre una ruta explícita si no desea depender del directorio actual.
+
+## `docker`
+
+``` bash
+iasi-dev docker [start|stop|status]
+```
+
+Gestiona los servicios declarados en `docker/iasi-compose.yml`. Sin subcomando utiliza `start`.
+
+La configuración actual incluye PlantUML, Ollama y Open WebUI. Los puertos y volúmenes efectivos deben consultarse en el archivo Compose de la versión instalada.
