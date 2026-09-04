@@ -4,7 +4,7 @@
 
 > Documentación oficial de `iasi.quarto`.
 
-`iasi-quarto-docs` contiene la documentación completa de **iasi.quarto**, el framework de ingeniería documental basado en Quarto que forma parte del ecosistema **IASI (Ingeniería Asistida por Sistemas Inteligentes)**.
+`iasi-quarto-docs` contiene la documentación completa de **iasi.quarto**, el framework de ingeniería documental basado en Quarto que forma parte del ecosistema **IASI (Ingeniería Aumentada por Sistemas Inteligentes)**.
 
 Este repositorio no contiene el código del framework.
 
